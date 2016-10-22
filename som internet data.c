@@ -27,15 +27,18 @@ float randomizeMap(float map[]){
 
 int main(){
 	
+	
 	srand(time(NULL));
 	float dataArr[5] = {0}; //this is the data, array size should be how big it is.
 	float map[][] = {0}; //this is the SOM map, array size should be determined from the input size
 	float learningRate = 0.9; //placeholder learning rate
 	int radius = 0;
 	
+	//som map should be a struct? many columns
 	randomizeMap(&map);
 	
-		
+	//get a random input from data, get the euclidean distance, get radius, adjust weights, aadjust learning rate/radius, repeat until iteration = 0
+	
 	
 	
 	
