@@ -25,10 +25,13 @@ a = 20
 b = 20
 
 somMap = [[0 for x in range(b)]for y in range(a)]
-dataArr = []
+dataArr = [] #get from csv file
 learningRate = 0.9
 radius = 20
 randomizeMap(somMap)
+iteration = 0 #placeholder
 
 #get a random input from the input data, compare its euclidean distance with the weights, get the smallest distance to find the winning neighborhood
 #adjust weights in winning neighborhood with formula, then change learning rate and change radius(if needed)
+
+for x in range(iteration): #do SOM algorithm^
