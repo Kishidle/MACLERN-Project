@@ -1,10 +1,13 @@
 import random
 import numpy
+import csv
 class SOMNode:
     def __init__(self, weights, eucDistance):
         self.weights = weights
         self.eucDistance = eucDistance
-
+class dataInput:
+    def __init__(self, attributes):
+        self.attributes = attributes
 
 
 def randomizeMap(somMap):
@@ -25,6 +28,12 @@ a = 20
 b = 20
 
 somMap = [[0 for x in range(b)]for y in range(a)]
+with open('csvhere.csv', 'rU') as data: #i dont know anymore
+    reader = csv.reader(data)
+    next(reader)
+    for row in reader:
+        yield [float(i) for i in row]
+        #how to read CSV
 dataArr = [] #get from csv file
 learningRate = 0.9
 radius = 20
@@ -42,7 +51,7 @@ for x in range(iteration): #do SOM algorithm^
     for i in range(20):
         for h in range(20):
             if i == 0 and h == 0:
-                dist = numpy.linalg.norm(dataArr[n], somMap[i][h].weights)
+                dist = numpy.linalg.norm(dataArr[n], somMap[i][h].weights) #i looked in stackoverflow and they say this is the same as computing the euclidean distance
                 winA = i
                 winB = h
             elif numpy.linalg.norm(dataArr[n], somMap[i][h].weights) < dist:
