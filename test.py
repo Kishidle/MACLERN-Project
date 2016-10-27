@@ -43,5 +43,9 @@ for x in range(iteration): #do SOM algorithm^
         for h in range(20):
             if i == 0 and h == 0:
                 dist = numpy.linalg.norm(dataArr[n], somMap[i][h].weights)
+                winA = i
+                winB = h
             elif numpy.linalg.norm(dataArr[n], somMap[i][h].weights) < dist:
                 dist = numpy.linalg.norm(dataArr[n], somMap[i][h].weights)
+                winA = i
+                winB = h
