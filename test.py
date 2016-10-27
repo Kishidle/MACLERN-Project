@@ -1,3 +1,6 @@
+#Coded by Arca, Garcia
+
+
 import random
 import numpy
 import csv
@@ -30,7 +33,7 @@ b = 20
 somMap = [[0 for x in range(b)]for y in range(a)]
 with open('csvhere.csv', 'rU') as data: #i dont know anymore
     reader = csv.reader(data)
-    next(reader)
+    next(reader) #to skip header
     for row in reader:
         yield [float(i) for i in row]
         #how to read CSV
@@ -58,3 +61,4 @@ for x in range(iteration): #do SOM algorithm^
                 dist = numpy.linalg.norm(dataArr[n], somMap[i][h].weights)
                 winA = i
                 winB = h
+    for i in range(iteration, 0, -1): #start, end, step
