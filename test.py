@@ -61,4 +61,6 @@ for x in range(iteration): #do SOM algorithm^
                 dist = numpy.linalg.norm(dataArr[n], somMap[i][h].weights)
                 winA = i
                 winB = h
-    for i in range(iteration, 0, -1): #start, end, step
+    for i in range(iteration, 0, -1):
+        #radius part here, getting the bounds for x and y
+        
